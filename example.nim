@@ -42,7 +42,7 @@ for i in 1 .. 5:
     # Interactive prompts
     if echo.prompt(dontForcePrompt, "Do you want to continue?"):
       echo.displayInfo("Continuing...")
-      else:
+    else:
         echo.displayInfo("Operation cancelled")
 
         # Custom prompt with default value
