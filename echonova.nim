@@ -306,7 +306,7 @@ proc prompt*(cli: EchoNova, forcePrompts: ForcePrompt, question: string): bool =
     cli.display("Prompt:", question & " -> [forced no]", Warning, HighPriority)
     return false
   of dontForcePrompt:
-    if cli.level > SilentPriority:
+    if cli.level != SilentPriority:
       cli.display("Prompt:", question & " [y/N]", Warning, HighPriority)
       cli.displayCategory("Answer:", Warning, HighPriority)
       let yn = stdin.readLine()
