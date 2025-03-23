@@ -25,9 +25,10 @@ A modern, flexible library for message display with progress indicators in Nim a
   - **Normal** for MediumPriority
 
 ## Installation
+Get always the last release:
 
 ```bash
-nimble install https://github.com/foxoman/echonova
+nimble install https://github.com/foxoman/echonova@#head
 ```
 
 ## Basic Usage
