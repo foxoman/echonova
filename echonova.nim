@@ -28,7 +28,7 @@ type
                            ## commands whose output should be machine readable.
 
   Priority* = enum
-    DebugPriority, LowPriority, MediumPriority, HighPriority, SilentPriority
+    SilentPriority, DebugPriority, LowPriority, MediumPriority, HighPriority
 
   DisplayType* = enum
     Error, Warning, Details, Hint, Message, Success, Progress 
@@ -306,7 +306,7 @@ proc prompt*(cli: EchoNova, forcePrompts: ForcePrompt, question: string): bool =
     cli.display("Prompt:", question & " -> [forced no]", Warning, HighPriority)
     return false
   of dontForcePrompt:
-    if cli.level != SilentPriority:
+    if cli.level > SilentPriority:
       cli.display("Prompt:", question & " [y/N]", Warning, HighPriority)
       cli.displayCategory("Answer:", Warning, HighPriority)
       let yn = stdin.readLine()
