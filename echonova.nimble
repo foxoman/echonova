@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "foxoman"
 description   = "A modern, flexible library for message display with progress indicators in Nim"
 license       = "BSD"
