@@ -22,16 +22,17 @@ for i in 1 .. 5:
   # Simulate work
   sleep(500)
 
-  # Reset progress display when done
-  echo.displayLineReset()
-  echo.displaySuccess("All items processed")
+# Reset progress display when done
+echo.displayLineReset()
+echo.displaySuccess("All items processed")
 
   # Error handling
-  try:
+try:
     # Simulate an error
     raise newException(IOError, "Could not open file")
-  except IOError as e:
+except IOError as e:
     echo.displayError(e) # Using the DisplayError with hint
+
 let err = newDisplayError(
   "Failed to connect to server", "Check your network connection and try again"
 )
