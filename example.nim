@@ -1,6 +1,6 @@
 # Example usage of the EchoNova library
 import os
-import echonova
+import src/echonova
 
 # You can either use the global CLI instance:
 displayInfo("Starting application")
@@ -26,7 +26,7 @@ for i in 1 .. 5:
 echo.displayLineReset()
 echo.displaySuccess("All items processed")
 
-  # Error handling
+# Error handling
 try:
     # Simulate an error
     raise newException(IOError, "Could not open file")

@@ -1,5 +1,6 @@
 # EchoNova - A library for message display with progress indicators
 # Copyright (C) 2025. All rights reserved.
+# Extracted from the Nimble library.
 # BSD License. See license.txt for more info.
 #
 # Philosophy for the messages that EchoNova displays:
@@ -31,11 +32,11 @@ type
     SilentPriority, DebugPriority, LowPriority, MediumPriority, HighPriority
 
   DisplayType* = enum
-    Error, Warning, Details, Hint, Message, Success, Progress 
+    Error, Warning, Details, Hint, Message, Success, Progress
 
   ForcePrompt* = enum
     dontForcePrompt, forcePromptYes, forcePromptNo
-    
+
   DisplayError* = object of CatchableError
     hint*: string  # Hint to display after the error
 
@@ -46,7 +47,7 @@ const
   styles: array[DebugPriority .. HighPriority, set[Style]] =
     [{styleDim}, {styleDim}, {}, {styleBright}]
 
-var 
+var
   lastWasDot = false
   lastCharidx = 0
   spinChars: array[0..7, string] = ["⣷","⣯","⣟","⡿","⢿","⣻","⣽","⣾"]
